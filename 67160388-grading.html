@@ -5,21 +5,141 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <title>Grade Calculator</title>
     </head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            display:flex;
+            flex-direction: column;
+            max-width: 650px;
+            margin: auto;
+            gap: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .input-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+    
+        }
+        /* .input-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+        } */
+        label {
+            width: 150px;
+        }
+        input {
+            flex: 1;
+            border: 2px solid #555;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        input:focus {
+            background-color: #eef6ff;
+            border-color: #007bff;
+            outline: none;
+        }
+        .button-group{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #btn-calculate {
+            background-color: blue;
+            color: #ffffff;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #btn-clear {
+            background-color: gray;
+            color: #ffffff;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #result-container {
+            display: none;
+            background-color: #ffefc2;
+            border-left: 4px solid #2e7d32;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border: 1;
+        }
+        th,td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: center;
+
+        }
+    </style>
     <body>
         <div class="container">
-        <label for="student-name">ชื่อ-นามสกุล</label><br />
-        <input id="student-name" name="student-name"  required/><br />
-        <label for="subject-name">ชื่อรายวิชา</label><br />
-        <input  id="subject-name" name="subject-name" required/><br />
-        <label for="midterm-score">คะแนนสอบกลางภาค</label><br />
-        <input type="text" id="midterm-score" name="midterm-score" required/><br />
-        <label for="final-score">คะแนนสอบปลายภาค</label><br />
-        <input type="text" id="final-score" name="final-score" required/><br />
-        <label for="assignment-score">คะแนนการบ้าน</label><br />
-        <input type="text" id="assignment-score" name="assignment-score" required/><br />
-        
+            <h1>Grade Calculator</h1>
+                <div class="input-row">
+                <label for="student-name">ชื่อ</label>
+                <input id="student-name" name="student-name"  required/>
+                </div>
+            
+                <div class="input-row">
+                <label for="subject-name">รายวิชา</label>
+                <input  id="subject-name" name="subject-name" required/>
+                </div>
+                <div class="input-row">
+                <label for="midterm-score">คะแนนสอบกลางภาค</label>
+                <input type="text" id="midterm-score" name="midterm-score" required/>
+                </div>
+                <div class="input-row">
+                <label for="final-score">คะแนนสอบปลายภาค</label>
+                <input type="text" id="final-score" name="final-score" required/>
+                </div>
+                <div class="input-row">
+                <label for="assignment-score">คะแนนการบ้าน</label>
+                <input type="text" id="assignment-score" name="assignment-score" required/>
+                </div>
+            
         <!--Button-->
-        <button id="btn-calculate">Calculate Grade</button>
+        <div class="button-group">
+            <button id="btn-calculate">Calculate Grade</button>
+            <button id="btn-clear">Clear</button>
+        </div>
+
+        <!--Result Section (hidden by default)-->
+        <div id="result-container" style="display: none;">
+            <p>Total Score: <span id="total-score">0</span></p>
+            <p>Final Grade: <span id="final-grade">-</span></p>
+            <p>Status: <span id="pass-status">-</span></p>
+        </div>
+        </div>
+            <table >
+                <thead>
+                <tr>
+                    <th>ชื่อ</th>
+                    <th>รายวิชา</th>
+                    <th>คะแนนรวม</th>
+                    <th>เกรด</th>
+                    <th>สถานะ</th>
+                </tr>
+            </thead>
+            <tbody id="result-table">
+        </tbody>
+    </table>
     </div>
     </body>
+    <scritp>
+        
+    </scritp>
 </html>
