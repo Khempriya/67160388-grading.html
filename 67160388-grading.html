@@ -184,5 +184,15 @@
         console.log(getGrade(65)); 
         console.log(getGrade(55)); 
         console.log(getGrade(40));
+
+        function getStatus(grade) {
+            if (grade === "F"){
+                return "FAIL"
+            } else {
+                return "PASS"
+            }
+        }
+        console.log(getStatus("D")); 
+        console.log(getStatus("F")); 
     </script>
 </html>
