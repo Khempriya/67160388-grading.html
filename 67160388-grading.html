@@ -164,5 +164,25 @@
         return (midterm * 0.2) + (final * 0.5) + (assignment * 0.3);
         }
         console.log(calculateScore(80, 90, 70));
+
+        function getGrade(score){
+            if (score >= 80 && score <= 1000) {
+                return "A";
+            } else if (score >= 70 && score <= 79) {
+                return "B";
+            }else if (score >= 60 && score <= 69) {
+                return "C";
+            }else if (score >= 50 && score <= 59) {
+                return "D";
+            }else  {
+                return "F";
+                
+            }
+        }
+        console.log(getGrade(85)); 
+        console.log(getGrade(75)); 
+        console.log(getGrade(65)); 
+        console.log(getGrade(55)); 
+        console.log(getGrade(40));
     </script>
 </html>
